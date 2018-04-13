@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Elmo Tweaks",
+  "short_name": "Elmo Tweaks",
+  "description": "Tweaks to make l10n.mozilla.org easier to use",
+  "version": "0.9.9",
+  "applications": {
+    "gecko": {
+      "id": "elmotweaks@mozilla.kewis.ch"
+    }
+  },
+
+  "icons": {
+    "16": "images/addon.svg",
+    "32": "images/addon.svg",
+    "48": "images/addon.svg",
+    "128": "images/addon.svg"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://l10n.mozilla.org/shipping/signoffs/*"],
+      "js": ["content/signoffs.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
